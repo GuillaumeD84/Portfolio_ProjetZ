@@ -1,5 +1,5 @@
 # Portfolio - Projet Z
-[> Page détaillé de l'exercice sur mon site <](neo-explorer.com/portfolio/projetz "Page de l'exercice sur mon site")
+[> Page détaillé de l'exercice sur mon site <](http://neo-explorer.com/portfolio/projetz "Page de l'exercice sur mon site")
 
 Projet réalisé avec une petite équipe sur une durée d'un mois. L'objectif fut de créer un site web grâce au framework Symfony, qui permettrait aux utilisateurs d'accéder à un jeu vidéo multijoueur développé à l'aide du framework HTML5 : Phaser, le tout en les connectants entre eux via les technologies Node.js et Socket.IO.
 
