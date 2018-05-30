@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/searchGame.css')}}">{% endblock %}
+
+{% block title %}{{ parent() }} - Search game{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-8 offset-2 my-2 text-center">
+      {% include 'partials/_flash_messages.html.twig' %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">Join a game</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <form class="form-inline mb-3">
+        <input class="form-control mr-sm-2 search-game" type="search" placeholder="Search game" aria-label="Search Game">
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Saints</th>
+            <th scope="col">Zombies</th>
+            <th scope="col">Time elapsed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for game in games %}
+            {% set saintsCount, zombiesCount = 0, 0 %}
+            {% if game.saint1 is not null %}{% set saintsCount = saintsCount + 1 %}{% endif %}
+            {% if game.saint2 is not null %}{% set saintsCount = saintsCount + 1 %}{% endif %}
+            {% if game.saint3 is not null %}{% set saintsCount = saintsCount + 1 %}{% endif %}
+            {% if game.zombie1 is not null %}{% set zombiesCount = zombiesCount + 1 %}{% endif %}
+            {% if game.zombie2 is not null %}{% set zombiesCount = zombiesCount + 1 %}{% endif %}
+            {% if game.zombie3 is not null %}{% set zombiesCount = zombiesCount + 1 %}{% endif %}
+            {% set difference = date(game.createdAt|date('Y/m/d H:i:s')).diff(date('now'|date('Y/m/d H:i:s'))) %}
+            {% set hoursElapsed, minutesElapsed, secondesElapsed = difference.h, difference.i, difference.s %}
+            <tr>
+              <td>
+                <a class="btn btn-primary" href="{{ path('game', {'slug': game.slug}) }}">Join</a>
+              </td>
+              <td scope="row" class="nameGame">
+                {{ game.name }}
+            </td>
+              <td><span class="{{ saintsCount >= 3 ? 'font-weight-bold' }}">{{ saintsCount }}/3</span></td>
+              <td><span class="{{ zombiesCount >= 3 ? 'font-weight-bold' }}">{{ zombiesCount }}/3</span></td>
+              <td>{{ hoursElapsed }}hour {{ minutesElapsed }}min {{ secondesElapsed }}sec</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  <script src="{{ asset('js/searchGame.js')}}" charset="utf-8"></script>
+{% endblock %}

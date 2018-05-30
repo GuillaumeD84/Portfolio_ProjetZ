@@ -1,0 +1,194 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('css/statistics.css') }}">
+{% endblock %}
+
+{% block title %}{{ parent() }} - Statistics{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">Statistics</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="global-stats" class="col-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center" scope="col" colspan="2">Global stats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Total game played</th>
+            <td>{{ totalGamePlayed.total }}</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Saints victories</th>
+            <td>
+                {% for faction in totalFactionGameWon %}
+                  {% if faction.name == "Saint" %}
+                    {{ faction.total }}
+                  {% endif %}
+                {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Zombies victories</th>
+            <td>
+                {% for faction in totalFactionGameWon %}
+                  {% if faction.name == "Zombie" %}
+                    {{ faction.total }}
+                  {% endif %}
+                {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Saints killed</th>
+            <td>
+                {% for faction in totalKilledByFaction %}
+                  {% if faction.name == "Saint" %}
+                    {{ faction.total }}
+                  {% endif %}
+                {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Zombies killed</th>
+            <td>
+                {% for faction in totalKilledByFaction %}
+                  {% if faction.name == "Zombie" %}
+                    {{ faction.total }}
+                  {% endif %}
+                {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Saints revived</th>
+            <td>
+                {% for faction in totalRevivedByFaction %}
+                  {% if faction.name == "Saint" %}
+                    {{ faction.total }}
+                  {% endif %}
+                {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Zombies revivied</th>
+            <td>
+                {% for faction in totalRevivedByFaction %}
+                  {% if faction.name == "Zombie" %}
+                    {{ faction.total }}
+                  {% endif %}
+                {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Points captured by S</th>
+            <td>number</td>
+          </tr>
+          <tr>
+            <th scope="row">Points captured by Z</th>
+            <td>number</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">Shortest game</th>
+            <td>{{ shortestMatch }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Longest game</th>
+            <td>{{ longestMatch }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Average game</th>
+            <td>{{ averageMatch }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="last-games" class="col-4">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h4 class="text-center">Last games</h4>
+        </li>
+        {% for key, match in allMatchs %}
+		<li class="list-group-item">
+			<div class="card">
+				<div class="card-body text-center">
+					<h5 class="card-title">{{ match.winner|upper }} WON</h5>
+					<h6 class="card-subtitle mb-2 text-muted">Duration : {{ match.duration }}</h6>
+					<p class="card-text">Saints killed {{ random(30) }}</p>
+					<p class="card-text">Zombies killed {{ random(30) }}</p>
+				</div>
+			</div>
+		</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div id="hall-of-fame" class="col-4">
+      <table class="table">
+        <thead id="ladder-thead">
+          <tr>
+            <th class="text-center" scope="col" colspan="2">
+              Hall of fame
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="ladder-choice-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Highest level
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item ladder-choice" href="#" data-choice="level_desc">Highest level</a>
+                  <a class="dropdown-item ladder-choice" href="#" data-choice="victories_desc">Victories</a>
+                  <a class="dropdown-item ladder-choice" href="#" data-choice="ennemies_killed_desc">Enemies killed</a>
+                  <a class="dropdown-item ladder-choice" href="#" data-choice="player_revived_desc">Player revived</a>
+                  <a class="dropdown-item ladder-choice" href="#" data-choice="game_played_desc">Game played</a>
+                  <a class="dropdown-item ladder-choice" href="#" data-choice="areas_captured_desc">Areas captured</a>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="ladder-tbody">
+          {% for user in usersLadder %}
+          <tr>
+            <th scope="row"><a href="{{ path('user_show', {'username': user.username}) }}">{{ user.username|capitalize }}</a></th>
+            <td>{{ user.value }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  <script type="text/javascript">
+    var statisticsRoute = '{{ path('statistics') }}';
+    var userProfileRoute = '{{ path('user_show', {'username': 'a'}) }}';
+  </script>
+  <script src="{{ asset('js/statistics.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,32 @@
+html {
+  margin: 0;
+  padding: 0;
+  background: url(../../images/bg.svg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  background: none;
+}
+
+.container {
+  background-color: white;
+}
+
+.search-user-list {
+  list-style-type: none;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  position: absolute;
+  z-index: 2;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 208px;
+}
+
+.textarea-contact {
+  height: 150px;
+  resize: none;
+}

@@ -1,0 +1,75 @@
+td {
+	padding-left: 1em;
+}
+
+.list-group, .list-group-item{
+	border: none;
+}
+
+#updateEmail {
+	display: none;
+}
+
+/* Stats bonus */
+.bonus-add-btn {
+	cursor: pointer;
+}
+
+/* Saving effect */
+.saving-in-progress {
+	display: none;
+}
+.saving-in-progress td span {
+  text-align: center;
+  animation: saving 1s ease-in-out infinite;
+}
+.saving-in-progress td span:first-child {
+  animation-delay: 0s;
+}
+.saving-in-progress td span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.saving-in-progress td span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.saving-in-progress td span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.saving-in-progress td span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.saving-in-progress td span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.saving-in-progress td span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.saving-in-progress td span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.saving-in-progress td span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+@keyframes saving {
+  0% {opacity: 1; font-size: 1em;}
+  50% {opacity: 0.5; font-size: 1.05em;}
+  100% {opacity: 1; font-size: 1em;}
+}
+
+#last-games, #fav-list {
+	height: 35em;
+	overflow-y : scroll;
+}
+
+#last-games::-webkit-scrollbar, #fav-list::-webkit-scrollbar {
+    display: none;
+}
+
+.win {
+	background-color: rgba(0,255,0,.5);
+}
+
+.lose {
+	background-color: rgba(255,0,0,.5);
+}

@@ -1,0 +1,28 @@
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mx-auto" id="loginModalLabel">Login</h5>
+      </div>
+      <div class="modal-body">
+        <form action="/login" method="POST">
+          <div class="form-row align-items-center">
+            <div class="col-6 text-center">
+              <label for="usernameInput">Username</label>
+              <input type="text" class="form-control mb-2" id="usernameInput" name="_username" placeholder="username">
+            </div>
+            <div class="col-6 text-center">
+              <label for="passwordInput">Password</label>
+              <input type="password" class="form-control mb-2" id="passwordInput" name="_password" placeholder="password">
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Contact{% endblock %}
+
+{% block body %}
+  <div class="row">
+    {# Form Contact #}
+    <div class="col-12">
+      <h2 class="text-center">
+          Contact
+          {% if user is defined %}
+            Player : {{ user. username }}
+          {% endif %}
+      </h2>
+    </div>
+  </div>
+  <div class="row my-4">
+      <div class="col-12">
+          {% include 'partials/_flash_messages.html.twig' %}
+      </div>
+    <div class="col-8 mx-auto p-2">
+      {# formulaire #}
+      {{ form_start(formContact) }}
+        {{ form_widget(formContact) }}
+        <input type="submit" value="Send" class="btn btn-primary">
+      {{ form_end(formContact) }}
+    </div>
+  </div>
+{% endblock %}

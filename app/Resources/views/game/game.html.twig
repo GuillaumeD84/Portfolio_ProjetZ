@@ -1,0 +1,257 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/game.css') }}">
+{% endblock %}
+
+{% block title %}{{ parent() }} - Fight !{% endblock %}
+
+{% block header %}
+  <div class="row justify-content-between">
+    <div id="game-name" class="col-4">
+      <h3 class="text-left">{{ game.name }}</h3>
+    </div>
+
+    <div class="col-4">
+      <h1 class="text-center">
+        <a id="logo" href="{{ path('homepage') }}">Projet Z</a>
+      </h1>
+    </div>
+
+    <div id="quit-btn" class="col-4 text-right">
+      <a class="btn btn-danger" href="{{ path('homepage') }}">Quit</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-12">
+      <h2 id="time-elapsed" class="text-center"></h2>
+    </div>
+  </div>
+
+<div class="row">
+  <div id="gameCanvas" class="col-12 d-flex justify-content-center">
+    <div id="gameWindowHudTop">
+
+      <div class="row text-center pt-2">
+        <div class="col-1 p-0 text-center">
+          <h3 class="saints-score saintsPoint">0</h3>
+        </div>
+
+        <div class="col-10">
+          <div class="row">
+            <div id="progressDivSaints" class="col-5 p-0">
+              <div class="faction-label text-center w-100">
+                <span>SAINTS</span>
+              </div>
+              <div class="saints-progress-bar"></div>
+            </div>
+            <h2 class="objective-score col-2 text-center p-0 mb-0">300</h2>
+            <div id="progressDivZombies" class="col-5 p-0">
+              <div class="faction-label text-center w-100">
+                <span>ZOMBIES</span>
+              </div>
+              <div class="zombies-progress-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-1 p-0 text-center">
+          <h3 class="zombies-score zombiesPoint">0</h3>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-8 offset-2">
+          <div id="areas-icons" class="row">
+            <div class="col-3">
+              <img id="tour-bleu" class="area" src="{{ asset('images/tour-bleu.png')}}" alt="">
+              <img id="tour" class="area" src="{{ asset('images/tour.png')}}" alt="">
+              <img id="tour-rouge" class="area" src="{{ asset('images/tour-rouge.png')}}" alt="">
+            </div>
+            <div class="col-3">
+              <img id="ferme-bleu" class="area" src="{{ asset('images/ferme-bleu.png')}}" alt="">
+              <img id="ferme" class="area" src="{{ asset('images/ferme.png')}}" alt="">
+              <img id="ferme-rouge" class="area" src="{{ asset('images/ferme-rouge.png')}}" alt="">
+            </div>
+            <div class="col-3">
+              <img id="moulin-bleu" class="area" src="{{ asset('images/moulin-bleu.png')}}" alt="">
+              <img id="moulin" class="area" src="{{ asset('images/moulin.png')}}" alt="">
+              <img id="moulin-rouge" class="area" src="{{ asset('images/moulin-rouge.png')}}" alt="">
+            </div>
+            <div class="col-3">
+              <img id="bois-bleu" class="area" src="{{ asset('images/bois-bleu.png')}}" alt="">
+              <img id="bois" class="area" src="{{ asset('images/bois.png')}}" alt="">
+              <img id="bois-rouge" class="area" src="{{ asset('images/bois-rouge.png')}}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-8 offset-2">
+          <div class="row">
+            <div class="col-3">
+              <div class="captur">
+                <div class="captur-progress captur-progress-tour">
+                  <div class="captur-fill-tour"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="captur">
+                <div class="captur-progress captur-progress-ferme">
+                  <div class="captur-fill-ferme"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="captur">
+                <div class="captur-progress captur-progress-moulin">
+                  <div class="captur-fill-moulin"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="captur">
+                <div class="captur-progress captur-progress-bois">
+                  <div class="captur-fill-bois"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="gameEnding" class="d-none justify-content-center align-items-center"></div>
+  </div>
+</div>
+
+  <input id="gameData" type="hidden" data-name="{{ game.slug }}" data-user="{{ app.user.username }}" data-slot="{{ playerSlot }}">
+{% endblock %}
+
+{% block footer %}
+  <div id="hudBot" class="row">
+    <!-- Chat -->
+    <div id="hudBotLeft" class="col-4">
+      <div id="chatButtons">
+        <div class="tooltipbox all">
+          <span class="chatCat all">All</span>
+          <span class="tooltiptext">
+            <div class="msg-btn" data-color="dark" data-receivers="all">Hello</div>
+            <div class="msg-btn" data-color="dark" data-receivers="all">GL HF</div>
+            <div class="msg-btn" data-color="dark" data-receivers="all">Rekt</div>
+            <div class="msg-btn" data-color="dark" data-receivers="all">GG</div>
+          </span>
+        </div>
+        <div class="tooltipbox team">
+          <span class="chatCat team">Team</span>
+          <span class="tooltiptext">
+            <div class="msg-btn text-danger" data-color="danger" data-receivers="team">Attack A</div>
+            <div class="msg-btn text-primary" data-color="primary" data-receivers="team">Defend A</div>
+            <div class="msg-btn text-danger" data-color="danger" data-receivers="team">Attack B</div>
+            <div class="msg-btn text-primary" data-color="primary" data-receivers="team">Defend B</div>
+            <div class="msg-btn text-danger" data-color="danger" data-receivers="team">Attack C</div>
+            <div class="msg-btn text-primary" data-color="primary" data-receivers="team">Defend C</div>
+            <div class="msg-btn text-danger" data-color="danger" data-receivers="team">Attack D</div>
+            <div class="msg-btn text-primary" data-color="primary" data-receivers="team">Defend D</div>
+          </span>
+        </div>
+      </div>
+      <div id="chat">
+        <ul id="messages" class="list-group text-left pr-0"></ul>
+      </div>
+    </div>
+
+    <!-- Player level, avatar and kills -->
+    <div id="hudBotMid" class="col-4 d-flex flex-column justify-content-between">
+
+      <div id="levelAvatar" class="row text-center">
+        <div class="col-3 h-100">
+          <p>
+            Level
+            <span class="user level">1</span>
+          </p>
+        </div>
+        <div class="col-6 border border-secondary rounded-circle">
+          <p>avatar</p>
+        </div>
+        <div class="col-3">
+          <p>
+            Next
+            <span class="user next-level-exp">?</span> xp
+          </p>
+        </div>
+      </div>
+
+      <div id="killsDeaths" class="row">
+        <table class="col-12">
+          <tr>
+            <td>Kills <span class="kills-value">?</span></td>
+            <td>Deaths <span class="deaths-value">?</span></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- Player data -->
+    <div id="hudBotRight" class="col-4">
+        <div id="playerData">
+          <div class="row">
+          <div id="playerStats">
+            <table>
+              <tr>
+                <td>Hp</td>
+                <td class="hp-value"><span class="current-hp">?</span>/<span class="max-hp">?</span></td>
+              </tr>
+              <tr>
+                <td>Atk</td>
+                <td class="atk-value">?</td>
+              </tr>
+              <tr>
+                <td>Def</td>
+                <td class="def-value">?</td>
+              </tr>
+              <tr>
+                <td>Spd</td>
+                <td class="spd-value">?</td>
+              </tr>
+            </table>
+          </div>
+          <div id="playerGoldsPotions">
+            <div id="golds">
+              <p class="golds-value">?</p>
+            </div>
+            <div id="potions">
+              <p class="potions-value">?</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div id="playerEquipment">
+          <div id="weapon">
+            <p class="weapon-name">no weapon</p>
+          </div>
+          <div id="weapon">
+            <p class="armor-name">no armor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascripts %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/phaser-ce@2.10.1/build/phaser.min.js"></script>
+  <script src="{{ asset('js/socket.js') }}"></script>
+  <script src="{{ asset('js/game.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
+{% endblock %}

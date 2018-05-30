@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/edituser.css')}}">{% endblock %}
+
+{% block body %}
+<div class="row">
+   <div class="col-12 text-center">
+     <h1>Players edit - {{ user.username }}</h1>
+   </div>
+ </div>
+ <div class="row">
+    <div class="col-12">
+        {{ form_start(edit_form) }}
+        <table class="table table-bordered w-75 mx-auto my-4">
+            <tr>
+                <td scope="col">Username</td>
+                <td scope="col">{{ user.username }}</td>
+            </tr>
+            <tr>
+                <td scope="col">Email</td>
+                <td scope="col">{{ user.email }}</td>
+            </tr>
+                <tr>
+                    <td scope="col">Role</td>
+                    <td scope="col edit-user-role">{{ form_widget(edit_form) }}</td>
+                </tr>
+            <tr>
+                <td scope="col">Status</td>
+                <td scope="col">Online - Offline</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <button class="btn btn-primary" type="submit" name="button">Edit</button>
+                    <a href="{{ path('admin_users_index') }}">
+                        <button class="btn btn-primary" type="button" name="button">Back to list</button>
+                    </a>
+                    <button class="btn btn-{% if user.isActive %}danger{% else %}success{% endif %} btn-isactive" data-id="{{ user.id }}" type="button" name="button">
+                        {% if user.isActive %}Disable{% else %}Enable{% endif %}
+                    </button>
+                </td>
+            </tr>
+        </table>
+        {{ form_end(edit_form) }}
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+    ajaxURL = '{{ path('change_isactive') }}';
+    </script>
+    <script src="{{ asset('js/admin.js') }}" charset="utf-8"></script>
+{% endblock %}

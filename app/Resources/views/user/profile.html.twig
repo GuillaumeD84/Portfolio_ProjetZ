@@ -1,0 +1,232 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+{% endblock %}
+{% block title %}{{ parent() }}
+{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-8 offset-2 my-2 text-center">
+      {% include 'partials/_flash_messages.html.twig' %}
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="row col-12 justify-content-center">
+      <h2>
+        {% if is_granted('IS_AUTHENTICATED_FULLY')and user != app.user %}{{ user.username~'\'s' }}{% else %}My{% endif %} Profile</h2>
+	  </div>
+	  <div class="row col-12">
+	  {# user's infos #}
+		  <div class="col-{% if is_granted('IS_AUTHENTICATED_FULLY') and user != app.user %}7{% else %}5{% endif %} border border-dark mx-auto p-5">
+			  <table class="mx-auto">
+				  <tbody>
+					  <tr>
+						  <th>Username</th>
+						  <td>{{ user.username }}
+          {% if is_granted('IS_AUTHENTICATED_FULLY')and user != app.user %}
+            {% if user in app.user.favoriteUsers %}
+              <a href="{{ path('user_remove_fav', {'id': app.user.id, 'idfav': user.id }) }}">
+                <i class="fas fa-star"></i>
+              {% else %}
+                <a href="{{ path('user_add_fav', {'id': app.user.id, 'idfav': user.id }) }}">
+                  <i class="far fa-star"></i>
+                </a>
+              {% endif %}
+            {% endif %}
+          </td>
+        </tr>
+        {% if is_granted('IS_AUTHENTICATED_FULLY')and user == app.user %}
+          <tr>
+            <th>Email</th>
+            <td id="editEmail">
+				<span id="email" data-id="{{ user.id }}">{{ user.email }}</span>
+				<span><i class="fas fa-edit"></i></span>
+			</td>
+			<td>
+				<form id="updateEmail" action="{{ path('user_update_email', {'id': user.id }) }}" method="">
+					<input type="text">
+					<button class="btn btn-sm btn-primary" type="submit">Update</button>
+				</form>
+			</td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td>*********
+              <span><i class="fas fa-edit"></i></span>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td class="p-0" colspan="2">
+              <a class="btn btn-primary" href="{{ path('contact_player', {'username': user.username }) }}">Send a message</a>
+            </td>
+          </tr>
+        {% endif %}
+        {# empty line #}
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>Level</th>
+          <td>{{ level }}</td>
+        </tr>
+        <tr>
+          <th>To Next</th>
+          <td>{{ toNext }}
+            xp</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>Bonus Stats</th>
+          {% if is_granted('IS_AUTHENTICATED_FULLY')and user == app.user %}
+            <td><span id="remainingPoints">{{ remainingPoints }}</span>
+              point(s) to spend</td>
+          {% endif %}
+        </tr>
+        <tr id="bonusHp">
+          <th>Hp</th>
+          <td>+<span class="bonus-value">{% if user.hitPoint is null %}0{% endif %}{{ user.hitPoint }}</span>%
+            {% if is_granted('IS_AUTHENTICATED_FULLY') and user == app.user and remainingPoints > 0 %}
+              <i class="fas fa-plus-square bonus-add-btn"></i>
+            </td>
+          {% endif %}
+        </tr>
+        <tr id="bonusAtk">
+          <th>Attack</th>
+          <td>+<span class="bonus-value">{% if user.attack is null %}0{% endif %}{{ user.attack }}</span>%
+            {% if is_granted('IS_AUTHENTICATED_FULLY') and user == app.user and remainingPoints > 0 %}
+              <i class="fas fa-plus-square bonus-add-btn"></i>
+            </td>
+          {% endif %}
+        </tr>
+        <tr id="bonusDef">
+          <th>Defense</th>
+          <td>+<span class="bonus-value">{% if user.defense is null %}0{% endif %}{{ user.defense }}</span>%
+            {% if is_granted('IS_AUTHENTICATED_FULLY') and user == app.user and remainingPoints > 0 %}
+              <i class="fas fa-plus-square bonus-add-btn"></i>
+            </td>
+          {% endif %}
+        </tr>
+        <tr id="bonusSpd">
+          <th>Speed</th>
+          <td>+<span class="bonus-value">{% if user.speed is null %}0{% endif %}{{ user.speed }}</span>%
+            {% if is_granted('IS_AUTHENTICATED_FULLY') and user == app.user and remainingPoints > 0 %}
+              <i class="fas fa-plus-square bonus-add-btn"></i>
+            </td>
+          {% endif %}
+        </tr>
+        <tr id="saveBonusStatRow" style="display: none;">
+            <td class="pl-0" colspan="2">
+                <span class="btn btn-success save-bonus-stat-btn" data-update-stats="{{ path('user_update_stats') }}">
+                    Save changes
+                </span>
+                <span class="btn btn-danger cancel-bonus-stat-btn">
+                    Cancel changes
+                </span>
+            </td>
+        </tr>
+        <tr class="saving-in-progress">
+            <td class="pl-0">
+                <span>s</span><span>a</span><span>v</span><span>i</span><span>n</span><span>g</span>
+                <span>.</span><span>.</span><span>.</span>
+            </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <th>Games played</th>
+          <td>{{ gamePlayed }}</td>
+        </tr>
+        <tr>
+          <th>Games won</th>
+          <td>{{ victories }}</td>
+        </tr>
+        <tr>
+          <th>K/D ratio</th>
+          <td>{{ kdRatio }}</td>
+        </tr>
+        <tr>
+          <th>Teammates revived</th>
+          <td>{{ random(50) }}</td>
+        </tr>
+        <tr>
+          <th>Ennemies finished</th>
+          <td>{{ random(50) }}</td>
+        </tr>
+        <tr>
+          <th>Base captured</th>
+          <td>{{ random(50) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  {% if is_granted('IS_AUTHENTICATED_FULLY')and user == app.user %}
+    {# last games #}
+    <div class="col-4 border border-dark mx-auto">
+		<h4 class="text-center">Last games</h4>
+      <ul id="last-games" class="list-group">
+		{% if not lastGames %}
+		<li class="list-group-item text-center text-secondary">Nothing to display</li>
+		{% endif %}
+		{% for index, lastgame in lastGames %}
+		{% set winner = lastgame.FinishedGame.faction.id %}
+		{% if winner  == lastgame.faction.id %}
+		{% set gameResult = 'win' %}
+		{% else %}
+		{% set gameResult = 'lose' %}
+		{% endif %}
+		<li class="list-group-item">
+			<div class="card {{ gameResult }}">
+				<div class="card-body">
+					<span class="float-right badge badge-{% if gameResult == 'win' %}success">Win{% else %}danger">Lose{% endif %}
+					</span>
+					<table>
+						<tbody>
+							<tr>
+								<th class="card-subtitle mb-2">Faction:</th>
+								<td class="card-subtitle mb-2">{{ lastgame.faction.name }}</td>
+
+							</tr>
+							<tr>
+								<th class="card-subtitle mb-2">Duration:</th>
+								<td class="card-subtitle mb-2">{{ durations[index] }}</td>
+							</tr>
+							<tr>
+								<th class="card-subtitle mb-2">K/D:
+								</th>
+								<td class="card-subtitle mb-2">{{ lastgame.killed ~'/'~ lastgame.death }}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  <div class="col-{% if is_granted('IS_AUTHENTICATED_FULLY') and user != app.user %}4{% else %}2{% endif %} border border-dark mx-auto">
+	  <h4 class="text-center">Favorite players</h4>
+    <ul id="fav-list" class="list-group">
+      <div class="row">
+        {% for fav in favs %}
+          <li class="list-group-item text-center {% if is_granted('IS_AUTHENTICATED_FULLY') and user != app.user %}col-6{% else %}col-12{% endif %}">
+            <a href="{{ path('user_show', {'username': fav.username}) }}">{{ fav.username }}</a>
+          </li>
+        {% endfor %}
+      </div>
+    </ul>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+  <script src ="{{ asset('js/editEmail.js')}}"></script>
+  <script src ="{{ asset('js/profileBonusStats.js')}}"></script>
+{% endblock %}

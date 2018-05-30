@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - New game{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">New game</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8 offset-2">
+      {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <p class="text-center">And that's all ...</p>
+        <input type="submit" value="Enter the battlefield !" class="btn btn-primary">
+      {{ form_end(form) }}
+    </div>
+  </div>
+{% endblock %}

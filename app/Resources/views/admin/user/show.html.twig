@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>Players info -
+        {{ user.username }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered w-50 mx-auto my-4">
+        <tbody>
+          <tr>
+            <th scope="col">Id</th>
+            <td scope="col">{{ user.id }}</td>
+          </tr>
+          <tr>
+            <th>Username</th>
+            <td>{{ user.username }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+          </tr>
+          <tr>
+            <th>Experience</th>
+            <td>{{ user.experience }}</td>
+          </tr>
+          <tr>
+            <th>Attack</th>
+            <td>{{ user.attack }}</td>
+          </tr>
+          <tr>
+            <th>Defense</th>
+            <td>{{ user.defense }}</td>
+          </tr>
+          <tr>
+            <th>Hitpoint</th>
+            <td>{{ user.hitPoint }}</td>
+          </tr>
+          <tr>
+            <th>Speed</th>
+            <td>{{ user.speed }}</td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td>
+              Online - Offline
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span class="d-flex justify-content-around">
+                <a href="{{ path('admin_users_edit', { 'id': user.id }) }}">
+                  <button class="btn btn-primary" type="submit" name="button">Edit</button>
+                </a>
+                <a href="{{ path('admin_users_index') }}">
+                  <button class="btn btn-primary" type="button" name="button">Back to list</button>
+                </a>
+                <button class="btn btn-{% if user.isActive %}danger{% else %}success{% endif %} btn-isactive" data-id="{{ user.id }}" type="button" name="button">
+                    {% if user.isActive %}Disable{% else %}Enable{% endif %}
+                </button>
+                </a>
+              </a>
+            </span>
+          </td>
+        </td>
+      </tbody>
+    </table>
+  {% endblock %}
+
+  {% block javascripts %}
+      <script>
+      ajaxURL = '{{ path('change_isactive') }}';
+      </script>
+      <script src="{{ asset('js/admin.js') }}" charset="utf-8"></script>
+  {% endblock %}

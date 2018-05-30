@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="saint.png">
+    <SubTexture name="walk_top_00" x="17" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+    <SubTexture name="walk_top_01" x="81" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+    <SubTexture name="walk_top_02" x="145" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+    <SubTexture name="walk_top_03" x="209" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+    <SubTexture name="walk_top_04" x="273" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+    <SubTexture name="walk_top_05" x="337" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+    <SubTexture name="walk_top_06" x="401" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+    <SubTexture name="walk_top_07" x="466" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+    <SubTexture name="walk_top_08" x="529" y="525" width="30" height="49" frameX="0" frameY="0" frameWidth="30" frameHeight="49"/>
+
+    <SubTexture name="walk_left_00" x="21" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_left_01" x="82" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_left_02" x="148" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_left_03" x="213" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_left_04" x="277" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_left_05" x="340" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_left_06" x="405" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_left_07" x="469" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_left_08" x="533" y="588" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+
+    <SubTexture name="walk_bot_00" x="17" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+    <SubTexture name="walk_bot_01" x="81" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+    <SubTexture name="walk_bot_02" x="145" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+    <SubTexture name="walk_bot_03" x="210" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+    <SubTexture name="walk_bot_04" x="272" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+    <SubTexture name="walk_bot_05" x="337" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+    <SubTexture name="walk_bot_06" x="401" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+    <SubTexture name="walk_bot_07" x="464" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+    <SubTexture name="walk_bot_08" x="529" y="650" width="31" height="53" frameX="0" frameY="0" frameWidth="31" frameHeight="53"/>
+
+    <SubTexture name="walk_right_00" x="20" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_right_01" x="84" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_right_02" x="148" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_right_03" x="211" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_right_04" x="274" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_right_05" x="336" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_right_06" x="402" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_right_07" x="467" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+    <SubTexture name="walk_right_08" x="532" y="716" width="28" height="50" frameX="0" frameY="0" frameWidth="28" frameHeight="50"/>
+
+
+
+
+    <SubTexture name="spellcast_top_00" x="0" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_top_01" x="64" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_top_02" x="128" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_top_03" x="192" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_top_04" x="256" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_top_05" x="320" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_top_06" x="384" y="0" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="spellcast_left_00" x="0" y="64" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_left_01" x="64" y="64" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_left_02" x="128" y="64" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_left_03" x="192" y="64" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_left_04" x="256" y="64" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_left_05" x="320" y="64" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_left_06" x="384" y="64" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="spellcast_bot_00" x="0" y="128" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_bot_01" x="64" y="128" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_bot_02" x="128" y="128" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_bot_03" x="192" y="128" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_bot_04" x="256" y="128" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_bot_05" x="320" y="128" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_bot_06" x="384" y="128" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="spellcast_right_00" x="0" y="192" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_right_01" x="64" y="192" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_right_02" x="128" y="192" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_right_03" x="192" y="192" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_right_04" x="256" y="192" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_right_05" x="320" y="192" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="spellcast_right_06" x="384" y="192" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+
+    <SubTexture name="thrust_top_00" x="0" y="256" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_top_01" x="64" y="256" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_top_02" x="128" y="256" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_top_03" x="192" y="256" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_top_04" x="256" y="256" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_top_05" x="320" y="256" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_top_06" x="384" y="256" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_top_07" x="448" y="256" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="thrust_left_00" x="0" y="320" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_left_01" x="64" y="320" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_left_02" x="128" y="320" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_left_03" x="192" y="320" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_left_04" x="256" y="320" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_left_05" x="320" y="320" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_left_06" x="384" y="320" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_left_07" x="448" y="320" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="thrust_bot_00" x="0" y="384" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_bot_01" x="64" y="384" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_bot_02" x="128" y="384" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_bot_03" x="192" y="384" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_bot_04" x="256" y="384" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_bot_05" x="320" y="384" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_bot_06" x="384" y="384" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_bot_07" x="448" y="384" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="thrust_right_00" x="0" y="448" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_right_01" x="64" y="448" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_right_02" x="128" y="448" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_right_03" x="192" y="448" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_right_04" x="256" y="448" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_right_05" x="320" y="448" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_right_06" x="384" y="448" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="thrust_right_07" x="448" y="448" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+
+    <SubTexture name="slash_top_00" x="0" y="768" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_top_01" x="64" y="768" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_top_02" x="128" y="768" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_top_03" x="192" y="768" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_top_04" x="256" y="768" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_top_05" x="320" y="768" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="slash_left_00" x="14" y="846" width="45" height="64" frameX="0" frameY="0" frameWidth="45" frameHeight="64"/>
+    <SubTexture name="slash_left_01" x="79" y="846" width="45" height="64" frameX="0" frameY="0" frameWidth="45" frameHeight="64"/>
+    <SubTexture name="slash_left_02" x="143" y="846" width="45" height="64" frameX="0" frameY="0" frameWidth="45" frameHeight="64"/>
+    <SubTexture name="slash_left_03" x="207" y="846" width="45" height="64" frameX="0" frameY="0" frameWidth="45" frameHeight="64"/>
+    <SubTexture name="slash_left_04" x="271" y="846" width="45" height="64" frameX="0" frameY="0" frameWidth="45" frameHeight="64"/>
+    <SubTexture name="slash_left_05" x="335" y="846" width="45" height="64" frameX="0" frameY="0" frameWidth="45" frameHeight="64"/>
+
+    <SubTexture name="slash_bot_00" x="0" y="896" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_bot_01" x="64" y="896" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_bot_02" x="128" y="896" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_bot_03" x="192" y="896" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_bot_04" x="256" y="896" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="slash_bot_05" x="320" y="896" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="slash_right_00" x="20" y="977" width="36" height="49" frameX="0" frameY="0" frameWidth="36" frameHeight="49"/>
+    <SubTexture name="slash_right_01" x="86" y="977" width="36" height="49" frameX="0" frameY="0" frameWidth="36" frameHeight="49"/>
+    <SubTexture name="slash_right_02" x="148" y="977" width="36" height="49" frameX="0" frameY="0" frameWidth="36" frameHeight="49"/>
+    <SubTexture name="slash_right_03" x="211" y="977" width="36" height="49" frameX="0" frameY="0" frameWidth="36" frameHeight="49"/>
+    <SubTexture name="slash_right_04" x="276" y="977" width="36" height="49" frameX="0" frameY="0" frameWidth="36" frameHeight="49"/>
+    <SubTexture name="slash_right_05" x="340" y="977" width="36" height="49" frameX="0" frameY="0" frameWidth="36" frameHeight="49"/>
+
+
+    <SubTexture name="shoot_top_00" x="0" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_01" x="64" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_02" x="128" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_03" x="192" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_04" x="256" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_05" x="320" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_06" x="384" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_07" x="448" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_08" x="512" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_09" x="576" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_10" x="640" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_11" x="704" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_top_12" x="768" y="1024" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="shoot_left_00" x="0" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_01" x="64" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_02" x="128" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_03" x="192" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_04" x="256" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_05" x="320" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_06" x="384" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_07" x="448" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_08" x="512" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_09" x="576" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_10" x="640" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_11" x="704" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_left_12" x="768" y="1088" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="shoot_bot_00" x="0" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_01" x="64" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_02" x="128" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_03" x="192" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_04" x="256" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_05" x="320" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_06" x="384" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_07" x="448" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_08" x="512" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_09" x="576" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_10" x="640" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_11" x="704" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_bot_12" x="768" y="1152" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="shoot_right_00" x="0" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_01" x="64" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_02" x="128" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_03" x="192" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_04" x="256" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_05" x="320" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_06" x="384" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_07" x="448" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_08" x="512" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_09" x="576" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_10" x="640" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_11" x="704" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="shoot_right_12" x="768" y="1216" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+
+    <SubTexture name="hurt_bot_00" x="0" y="1280" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="hurt_bot_01" x="64" y="1280" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="hurt_bot_02" x="128" y="1280" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="hurt_bot_03" x="192" y="1280" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="hurt_bot_04" x="256" y="1280" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+    <SubTexture name="hurt_bot_05" x="320" y="1280" width="64" height="64" frameX="0" frameY="0" frameWidth="64" frameHeight="64"/>
+</TextureAtlas>

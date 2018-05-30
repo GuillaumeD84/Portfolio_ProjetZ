@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - FAQ{% endblock %}
+
+{% block body %}
+  <div class="row">
+    {# FAQ #}
+    <div class="col-12">
+      <h2 class="text-center">FAQ</h2>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-12 p-2">
+        {# questions #}
+        <p class="h3">
+            Q: Nunc a lobortis ligula. Maecenas blandit laoreet libero sed vehicula ?
+        </p>
+        {# réponses #}
+        <p class="pl-4 pt-2 text-justify">
+            A: Integer ultricies dictum nunc, ac consectetur diam tristique quis. Proin commodo tortor ut elit porta dictum. Nunc ornare eu nunc eu rhoncus. Sed ac consequat nibh. Quisque iaculis varius ultrices. Sed cursus risus vitae tortor aliquam, quis ornare dui congue. Pellentesque semper mi ut metus rhoncus auctor. Cras risus ante, ultrices facilisis libero a, varius scelerisque massa.
+        </p>
+    </div>
+    <div class="col-12 mt-4 p-2">
+        <p class="h3">
+            Q: Donec ultricies elit id quam lacinia, feugiat pharetra quam dapibus ?
+        </p>
+        <p class="pl-4 pt-2 text-justify">
+            A: Vestibulum ullamcorper, sapien at aliquam rutrum, turpis velit gravida orci, sit amet elementum nisi diam et purus. Ut condimentum feugiat semper.
+        </p>
+    </div>
+    <div class="col-12 mt-4 p-2">
+        <p class="h3">
+            Q: Sed ut sem vestibulum dolor congue dictum quis sit amet sem ?
+        </p>
+        <p class="pl-4 pt-2 text-justify">
+            A: Etiam tempus enim nec dictum auctor. Nullam ut nulla facilisis, imperdiet libero quis, gravida magna. In varius nisl non metus egestas porttitor. Fusce auctor tempor nisl, at viverra libero mollis et. In hac habitasse platea dictumst. Nulla a massa luctus, bibendum nisl eu, vehicula mi. Fusce rutrum purus ac varius porttitor.
+        </p>
+    </div>
+  </div>
+  {% endblock %}

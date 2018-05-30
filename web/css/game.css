@@ -1,0 +1,345 @@
+#gameWindowHudTop {
+  width: 800px;
+  position: absolute;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+#gameCanvas {
+  min-height: 200px;
+  border: 2px solid black;
+  border-bottom: none;
+}
+
+#progressDivSaints, #progressDivZombies {
+  border: 1px solid #aaa;
+  height: 2em;
+  width: 210px;
+  border-radius: 2px;
+}
+
+.objective-score {
+  margin-top: -4px;
+  text-shadow: 0 0 2px #aaa, 0 0 2px #aaa, 0 0 2px #aaa;
+}
+
+.saints-score, .zombies-score {
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.saints-score {
+  color: dodgerblue;
+  text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+}
+
+.zombies-score {
+  color: brown;
+  text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+}
+
+.faction-label {
+  position: absolute;
+  z-index: 2;
+}
+
+.faction-label span {
+  line-height: 100%;
+  vertical-align: middle;
+  color: black;
+  font-weight: bold;
+  text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+}
+
+.saints-progress-bar, .zombies-progress-bar {
+  display: inline-table;
+  position: relative;
+  width: 0px;
+  height: 1.9em;
+  padding: 0;
+  border-radius: 2px;
+  max-width: 100%;
+}
+
+.saints-progress-bar {
+  background-color: rgba(30, 144, 255, 0.6);
+  float: left;
+}
+
+.zombies-progress-bar {
+  background-color: rgba(165, 42, 42, 0.6);
+  float: right;
+}
+
+#areas-icons img {
+  opacity: 0.75;
+  margin-left: -2px;
+}
+
+.area {
+  display: none;
+}
+
+.captur {
+  height: 10px;
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.captur-progress {
+  width: 50px;
+  height: 10px;
+  border: 1px solid #222;
+}
+
+.captur-progress-tour, .captur-progress-ferme, .captur-progress-bois, .captur-progress-moulin {
+  display: none;
+}
+
+.captur-fill, .captur-fill-tour, .captur-fill-ferme, .captur-fill-bois, .captur-fill-moulin {
+  height: 8px;
+  width: 0%;
+}
+
+#gameEnding {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  padding-left: 6px;
+  padding-right: 6px;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 2;
+  font-family: 'Bangers', cursive;
+  font-size: 5em;
+}
+
+/* Bottom HUD */
+
+footer.container {
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-top: none;
+}
+
+#hudBot {
+  height: 200px;
+  padding: 6px 0;
+  max-width: 800px;
+  margin: auto;
+  background: radial-gradient(ellipse at center, #EEE 50%, #B2D8FF 100%);
+}
+
+#hudBotLeft {
+  padding-left: 0;
+}
+
+#chatButtons {
+  height: 15%;
+}
+
+#chat {
+  margin-top: 5%;
+  height: 80%;
+  overflow-y: scroll;
+  direction: rtl;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#chat #messages li {
+  padding: 0;
+  padding-left: 4px;
+  margin-bottom: 6px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  word-break: break-all;
+}
+
+#chat #messages li .msg-sender {
+  font-weight: bold;
+}
+
+#chat #messages li .msg-sender.ally {
+  color: skyblue;
+}
+
+#chat #messages li .msg-sender.enemy {
+  color: red;
+}
+
+.chatCat {
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.chatCat.all {
+  color: white;
+  background-color: black;
+}
+
+.chatCat.team {
+  background-color: rgba(30, 144, 255, 0.6);
+}
+
+.tooltipbox {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipbox .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #000;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  user-select: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltipbox .tooltiptext {
+  /* top: 32px; */
+  bottom: 30px;
+  left: 8px;
+}
+
+.tooltipbox.team .tooltiptext {
+  width: 200px;
+}
+
+.tooltipbox.team .tooltiptext div {
+  display: inline-block;
+  width: 42%;
+}
+
+.tooltipbox:hover .tooltiptext {
+  visibility: visible;
+}
+
+.msg-btn {
+  cursor: pointer;
+  background-color: white;
+  margin: 6px;
+  border-radius: 4px;
+}
+
+#hudBotMid #levelAvatar {
+  height: 85%;
+}
+
+#hudBotMid #levelAvatar div {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#hudBotMid #levelAvatar div p {
+  margin: auto;
+}
+
+#hudBotMid #levelAvatar div p span {
+  display: block;
+  font-weight: bold;
+}
+
+#hudBotMid #killsDeaths {
+  height: 15%;
+  text-align: center;
+}
+
+#hudBotMid #killsDeaths table {
+  height: 100%;
+}
+
+#hudBotMid #killsDeaths td {
+  width: 50%;
+}
+
+#hudBotMid #killsDeaths .kills-value, #hudBotMid #killsDeaths .deaths-value {
+  font-weight: bold;
+}
+
+#hudBotRight {
+  padding-right: 0;
+}
+
+#hudBotRight .row {
+  padding-left: 12px;
+}
+
+#hudBotRight #playerData {
+  margin-bottom: 8px;
+}
+
+#hudBotRight #playerStats, #hudBotRight #playerGoldsPotions {
+  padding: 0;
+  width: 42%;
+  height: 104px;
+}
+
+#hudBotRight #playerStats {
+  margin-left: 30px;
+}
+
+#hudBotRight #playerStats tr td:nth-child(2):not(.hp-value) {
+  font-weight: bold;
+}
+
+#hudBotRight #playerStats tr td.hp-value .current-hp, #hudBotRight #playerStats tr td.hp-value .max-hp {
+  font-weight: bold;
+}
+
+#hudBotRight #playerGoldsPotions div {
+  height: 40%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hudBotRight #playerGoldsPotions #golds {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background-image: url("../assets/images/shop/gold-small.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#hudBotRight #playerGoldsPotions #potions {
+  background-image: url("../assets/images/shop/potion-heal-small.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#hudBotRight #playerGoldsPotions div p {
+  margin-bottom: 0;
+  line-height: 100%;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff;
+}
+
+#hudBotRight #weapon, #hudBotRight #armor {
+  height: 34px;
+  margin-bottom: 6px;
+  background-image: url("../assets/images/shop/unknown-small.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#hudBotRight #weapon p, #hudBotRight #armor p {
+  font-size: 1.2em;
+  margin-bottom: 0;
+  padding-left: 40px;
+  line-height: 34px;
+}

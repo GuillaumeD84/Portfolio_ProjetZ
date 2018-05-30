@@ -1,0 +1,24 @@
+{
+  "name": "ProjetZ",
+  "version": "0.0.1",
+  "description": "real-time-game",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Explorer - Projet Z",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "socket.io": "^2.0.4",
+    "socket.io-redis": "^5.2.0"
+  }
+}

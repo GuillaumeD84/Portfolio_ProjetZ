@@ -1,0 +1,66 @@
+<nav class="row">
+  {# Create/Join game buttons #}
+  <div class="col-5">
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+      <div class="row">
+        <div class="col">
+          <a href="{{ path('game_new') }}" class="btn btn-primary">
+            New game
+          </a>
+          <a href="{{ path('game_search') }}" class="btn btn-primary">
+            Join game
+          </a>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-6 mt-2">
+              <input class="form-control mr-sm-2 search-player" type="search" name="searchPlayer" placeholder="Search Players" aria-label="Search" autocomplete="off">
+          </div>
+          <div class="col-12" style="position:relative">
+              <ul class="d-none search-user-list">
+              </ul>
+          </div>
+      </div>
+      {% endif %}
+    </div>
+
+  {# Projet Z #}
+  <div class="col-2">
+    <h1>
+      <a href="{{ path('homepage') }}">Projet Z</a>
+    </h1>
+  </div>
+
+  {# Login/Signin/Logout and Profile buttons #}
+  <div class="col-5 text-right">
+      <div class="row">
+          <div class="col-12">
+            {# modal signup #}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+              <a href="{{ path('user_show', { 'username': app.user.username }) }}" class="btn btn-primary">Profile</a>
+              <a href="/logout" class="btn btn-primary">Logout</a>
+            {% else %}
+              {# modal login #}
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login</button>
+              {% include 'partials/_login_modal.html.twig' %}
+              {# modal signup #}
+              <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">Sign up</a>
+              {% include 'partials/_signup_modal.html.twig' %}
+            {% endif %}
+          </div>
+          <div class="col-12 mt-2">
+              {% if is_granted('ROLE_ADMIN') %}
+              <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAdminMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ADMIN
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownAdminMenu">
+                      <a class="dropdown-item" href="{{ path('admin_users_index') }}">List User</a>
+                      <a class="dropdown-item" href="{{ path('admin_users_new') }}">New User</a>
+                  </div>
+              </div>
+              {% endif %}
+          </div>
+      </div>
+  </div>
+</nav>
